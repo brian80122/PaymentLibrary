@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5AE21530-8AF6-4AF7-8175-10F7AA12414F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Payment</RootNamespace>
+    <AssemblyName>Payment</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\EzPayInvoiceAllowanceIssueInfo.cs" />
+    <Compile Include="Models\EzPayInvoiceAllowanceResponse.cs" />
+    <Compile Include="Models\EzPayInvoiceAllowanceResult.cs" />
+    <Compile Include="Models\EzPayInvoiceIssueResponse.cs" />
+    <Compile Include="Models\EzPayInvoiceIssueResult.cs" />
+    <Compile Include="Models\EzPayInvoiceInvalidInfo.cs" />
+    <Compile Include="Models\EzPayInvoiceInvalidResponse.cs" />
+    <Compile Include="Models\EzPayInvoiceInvalidResult.cs" />
+    <Compile Include="Models\EzPayInvoiceIssueInfo.cs" />
+    <Compile Include="Models\EzPayInvoiceRequest.cs" />
+    <Compile Include="Models\BasicInfo.cs" />
+    <Compile Include="Models\NewebpayBasicRequest.cs" />
+    <Compile Include="Models\BasicResponse.cs" />
+    <Compile Include="Models\NewebPayCreditCardCloseResponse.cs" />
+    <Compile Include="Models\NewebpayPaymentResponse.cs" />
+    <Compile Include="Models\NewebpayPaymentResult.cs" />
+    <Compile Include="Models\NewebpayQueryTradeInfoInfo.cs" />
+    <Compile Include="Models\NewebpayQueryTradeInfoResponse.cs" />
+    <Compile Include="Models\NewebpayQueryTradeInfoResult.cs" />
+    <Compile Include="Models\NewebpayResponse.cs" />
+    <Compile Include="Models\NewebpayTakeNumberResponse.cs" />
+    <Compile Include="Models\NewebpayTakeNumberResult.cs" />
+    <Compile Include="Models\NewebpayRequest.cs" />
+    <Compile Include="Models\NewebpayTradeInfo.cs" />
+    <Compile Include="Models\NewebpayCreditCardClosePostDataInfo.cs" />
+    <Compile Include="Models\StringExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ConfigService.cs" />
+    <Compile Include="Services\EzPayService.cs" />
+    <Compile Include="Services\HashService.cs" />
+    <Compile Include="Services\HttpService.cs" />
+    <Compile Include="Services\NewebpayService.cs" />
+    <Compile Include="Services\PaymentServiceBase.cs" />
+    <Compile Include="Services\RFC3986EncodeService.cs" />
+    <Compile Include="Services\UnixDateTimeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
